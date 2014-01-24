@@ -12,7 +12,7 @@ The following will start the server at localhost:8080.
 
 ```clojure
 (use 'ring.adapter.jetty)
-(use 'everything-store.core)
-(defonce server (run-jetty (handler {:greeting "Hidy, ho!"}) {:port 8080 :join? false}))
+(use 'everything-store.core :reload)
+(defonce server (run-jetty (handler (ref {"/" "Hello, World"})) {:port 8080 :join? false}))
 ```
 
